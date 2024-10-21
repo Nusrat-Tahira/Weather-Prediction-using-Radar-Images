@@ -1,9 +1,10 @@
-# Weather-Prediction-using-Radar-Images
+# Weather Prediction Using Radar Images - Setup Guide
 
-## Overview
-This document outlines the folder structure, contents, and purposes of each component in the "Weather-Prediction-using-Radar-Images" project. The project leverages radar images to predict weather conditions, utilizing various datasets and notebooks for training and testing machine learning models.
+## Project Overview
+This project utilizes radar images to predict weather conditions. It includes training and testing notebooks, datasets, and radar images.
 
 ## Folder Structure
+```
 Weather-Prediction-using-Radar-Images/
 ├── radar_images/
 │   ├── RDR_PSN_202306230000.png
@@ -17,38 +18,58 @@ Weather-Prediction-using-Radar-Images/
 ├── testing_models.ipynb
 ├── requirements.txt
 └── output/
+```
+## Setup Process
 
-## Folder Descriptions
-1. radar_images/
-This directory contains radar images used as input data for weather prediction models. Each image filename corresponds to a specific timestamp, formatted as RDR_PSN_YYYYMMDDHHMM.png. 
+### Step 1: Install Anaconda
+Download and install Anaconda:
+- [Anaconda](https://www.anaconda.com/products/distribution#download-section)
 
-### Example Files:
-RDR_PSN_202306230000.png: Radar image for June 23, 2023, at 00:00.
-RDR_PSN_202306230001.png: Radar image for June 23, 2023, at 00:01.
-… and so on for additional timeframes.
+### Step 2: Create a Conda Environment
+1. Open your terminal or Anaconda Prompt.
+2. Navigate to the project directory:
+   ```bash
+   cd path/to/Weather-Prediction-using-Radar-Images
+   ```
+3. Create a new Conda environment:
+   ```bash
+   $ conda create --name weather-prediction-env python=3.7.16
+   ```
+4. Activate the environment:
+   ```bash
+   $ conda activate weather-prediction-env
+   ```
+### Step 3: Install Required Packages
+1. Install the required packages:
+   ```bash
+   $ pip install -r requirements.txt
+   ```
+2. Verify installation:
+   ```bash
+   $ pip list
+   ```
+### Step 4: Open Jupyter Notebook
+1. Launch Jupyter Notebook:
+   ```bash
+   $ jupyter notebook
+   ```
+2. In your browser, navigate to the project folders.
 
-2. dataset/
-This folder houses datasets in HDF5 format, which are structured to facilitate model training and testing. Each file contains a series of RGB frames representing different weather scenarios.
+### Step 5: Run the Training Notebook
+1. Open training_file.ipynb.
+2. Review and run the cells to train your model.
 
-### Example Files:
-12framesRGB.h5: Contains 12 frames of RGB images for training/testing.
-24framesRGB.h5: Contains 24 frames of RGB images.
-36framesRGB.h5: Contains 36 frames of RGB images.
+### Step 6: Run the Testing Notebook
+1. Open testing_models.ipynb.
+2. Adjust code as needed and run the cells to test your model.
 
-3. training_file.ipynb
-This Jupyter Notebook file is designed for training the weather prediction model. It provides the necessary code to load datasets, preprocess radar images, and train the selected machine learning or deep learning model.
+### Step 7: Check the Output Folder
+Review the output/ folder for results and logs.
 
-4. testing_models.ipynb
-This Jupyter Notebook file is utilized for testing and evaluating the performance of the trained weather prediction model. It contains code to make predictions using new radar image inputs and assess the accuracy of the results.
-
-5. requirements.txt
-This file lists all the Python packages required to run the project. It includes specific versions of libraries needed for data analysis, model training, and visualization. To install the required packages, execute the following command:
-pip install -r requirements.txt
-
-7. output/
-The output folder is designated for storing results generated from model predictions and evaluations. This directory may include prediction logs, visualizations, or any other relevant output generated after running the training or testing notebooks.
-
-## Conclusion
-This folder structure is organized to facilitate the development and evaluation of weather prediction models using radar images. Ensure to keep datasets and images current to maintain the accuracy and effectiveness of the predictions.
-----------------------------------------------------------------------------------------------------------------------------
-Feel free to modify any parts of the file to better suit your project or to add any additional details that may be relevant!
+### Step 8: Deactivate the Conda Environment (Optional)
+To deactivate the environment, run:
+   ```bash
+   $ conda deactivate
+   ```
+### Conclusion
+You have successfully set up your environment and executed your weather prediction project using radar images. Adjust the datasets and model parameters as necessary to optimize performance.
